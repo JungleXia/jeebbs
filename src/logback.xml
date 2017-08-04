@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- Appenders -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>   
+			<pattern>%-22d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{20} %L - %msg%n</pattern>   
+	    </encoder>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p [%t][%c] %m%n" />
+		</layout>
+	</appender>
+
+	<!-- Loggers -->
+	<logger name="org.springframework">
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.amqp">
+		<level value="info" />
+	</logger>
+
+	<logger name="org.springframework.integration">
+		<level value="info" />
+	</logger>
+
+	<!-- Root Logger -->
+	<root level="info">
+		<appender-ref ref="console" />
+	</root>
+
+</configuration>
